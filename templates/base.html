@@ -1,0 +1,59 @@
+{% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_messages %}
+
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>ITSpace</title>
+		{% load static %} <link href ="{%static "css/base.css" %}" rel =
+		"stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+	</head>
+	
+	<body>
+		<div class='menu d-flex h-100'>
+		<nav class="col-2 fw-bold  bg-danger">
+			<div class="logo">
+				<img class='logo' src="{%static "img/logo.png" %}" alt="site logo with
+				tool">
+			</div>
+
+			<ul class="nav d-grid p-2 pt-5">
+				<a class="nav-link" href="{%url "home" %}">STRONA GŁÓWNA</a>
+				<a class="nav-link" href="{%url "devices_list" %}">LISTA URZĄDZEŃ</a>
+				<li class="nav-link">MAPA</li>
+				<li class="nav-link">SWITCHE</li>
+				<a class="nav-link"href="{%url "admin:index" %}" >ADMINISTRACJA</a>
+			</ul>
+		</nav>
+		
+		<div class=' col-10'>
+			<div class=' navbar justify-content-center d-flex '>
+				<h2 class='head'>{% block header %}Witamy w IT-Space{% endblock header %}</h2>
+			</div>
+			<div class='p-3'>{% block content%}
+				<div class ='p-5'> 
+					<h4 class='pb-5 text-center'>Centrum informacyjne urządzeń w twojej sieci</h4>
+					<span > Witamy w systemie poświęconym administratorom IT.</br>
+						   Strona składa się z modułów odpowiedzialnych za zarządzanie urządzeniami w sieci. </br></br>
+						   <b>Lista urządzeń:</b> Moduł odpowiedzialny za wyszukiwanie informacji o interesującym nas urzadzeniu. </br></br>
+						   <b>Mapa(STRONA W BUDOWIE): </b>Komponent służący do zlokolizowania urządzenia. </br></br>
+						   <b>Switche(STRONA W BUDOWIE): </b> Znajdziemy tu informacje o Switchach i sprawdzenia stanu urządzeń </br></br>
+						   <b>Administracja:</b> Dodawanie/zmiana/usuwanie urządzeń. Za dostęp do strony odpowiedzialny jest administrator strony.</br>
+						   W celu uzyskania dostępu prosimy o kontatk z Administracją 
+					</span>
+				</div>
+				{% endblock content %}
+			</div>
+		</div>
+	
+	</div>
+		<footer>
+			<div class="text-center  footer bg-danger" >
+				© 2023 Copyright:
+				<a class="text-white" href="mailto: pawewlr.121@gmail.com">Paweł Woroniecki </a>
+			  </div>
+		</footer>
+	</body>
+</html>
